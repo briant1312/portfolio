@@ -8,7 +8,13 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
+
+:root {
+    --color-primary: rgb(89, 214, 225);
+    --color-dark-grey: #3f3f3f;
+    --color-light-grey: #7e7e7e;
+}
 
 nav {
     position: sticky;
@@ -17,7 +23,7 @@ nav {
     align-items: center;
     gap: 2rem;
     justify-content: flex-end;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 1rem 4rem;
     background-color: #414040;
     z-index: 1;
@@ -25,15 +31,14 @@ nav {
 
 nav a {
     text-decoration: none;
-    /* color: #cfcfcf; */
-    color: rgb(89, 214, 225);
+    color: var(--color-primary);
 }
 
 h2 {
     text-align: center;
     margin-bottom: 5rem;
-    font-size: 2.5rem;
-    color: rgb(89, 214, 225);
+    font-size: 3rem;
+    color: var(--color-primary);
 }
 
 /* ========== hero ========== */
@@ -57,8 +62,12 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.basic-info p {
+    font-size: 1.2rem;
+}
+
 h1 {
-    font-size: 3.2rem;
+    font-size: 4rem;
 }
 
 .icon {
@@ -82,20 +91,20 @@ h1 {
 
 .technologies li {
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 /* ========== about me ========== */
 
 #about-me {
     padding: 5rem 5rem 10rem 5rem;
-    background-color: #7e7e7e;
+    background-color: var(--color-light-grey);
 }
 
 .terminal {
     max-width: 85ch;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.5;
     color: white;
     padding: 3rem;
@@ -106,7 +115,7 @@ h1 {
 }
 
 .terminal p {
-    color: rgb(89, 214, 225);
+    color: var(--color-primary);
     margin: 1rem 0;
 }
 
@@ -177,12 +186,12 @@ h1 {
 
 .project p {
     line-height: 1.5;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 3rem;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -203,7 +212,7 @@ a span {
 /* ========== portfolio ========== */
 
 #resume {
-    background-color: #7e7e7e;
+    background-color: var(--color-light-grey);
     padding: 5rem;
     padding-bottom: 10rem;
 }
@@ -211,4 +220,86 @@ a span {
 iframe {
     display: block;
     margin: 0 auto;
+}
+
+/* ========== media queries ========== */
+
+@media screen and (max-width: 87.5em) {
+    .project {
+        flex-direction: column-reverse;
+        padding-inline: 10rem;
+    }
+
+    .image {
+        display: block;
+        margin: 0 auto 2rem auto;
+    }
+
+    h3 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 68.75em) {
+    html {
+        font-size: 80%;
+    }
+
+    .basic-info {
+        margin-top: 40%;
+    }
+
+    .technologies {
+        margin-top: 15rem;
+    }
+}
+
+@media screen and (max-width: 56.25em) {
+    .basic-info {
+        margin: auto;
+    }
+
+    .project {
+        padding-inline: 5rem;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    #resume {
+        padding: 1rem;
+        padding-bottom: 10rem;
+    }
+}
+
+@media screen and (max-width: 41.25em) {
+    html {
+        font-size: 70%;
+    }
+
+    .landing-container {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+    }
+
+    .technologies {
+        margin-top: 5rem;
+    }
+
+    .technologies ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 29.7em) {
+    #about-me,
+    #portfolio {
+        padding-inline: 1rem;
+    }
+
+    .project {
+        padding-inline: 1rem;
+    }
 }
